@@ -3,3 +3,13 @@ colnames(toydata)<-c("DocIDi", "DocIDj", "Choose")
 toydata
 table(toydata$DocIDj)
 
+lambdai<-
+?sample
+bradleyterry<-function(a,b,lambdai,dataset){
+  sum<-0
+  for (i in ncol(dataset[,DocIDj])){
+    sum<-sum+(1/(lambdai[i]+dataset[i,DocIDj]))}
+    output<-(a-1+colSums(dataset[,Choose]))/(b+sum)
+    return(output)
+}
+
