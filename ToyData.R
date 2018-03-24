@@ -3,13 +3,16 @@ colnames(toydata)<-c("DocIDi", "DocIDj", "Choose")
 toydata
 table(toydata$DocIDj)
 
-lambdai<-
+lambdai<-runif(30)
 ?sample
 bradleyterry<-function(a,b,lambdai,dataset){
   sum<-0
-  for (i in ncol(dataset[,DocIDj])){
-    sum<-sum+(1/(lambdai[i]+dataset[i,DocIDj]))}
-    output<-(a-1+colSums(dataset[,Choose]))/(b+sum)
+  for (i in nrow(dataset$DocIDj)){
+    sum<-sum+(1/(lambdai[i]+dataset$DocIDj))
+    }
+    output<-(a-1+sum(dataset$Choose))/(b+sum)
     return(output)
 }
+
+bradleyterry(1,2,lambdai,toydata)
 
