@@ -4,6 +4,8 @@ table(toydata$DocIDj)
 
 lambdai<-runif(30)
 ?sample
+
+package.skeleton()
 bradleyterry<-function(a,b,lambdai,dataset){
   summationterm<-0
   for (i in nrow(dataset$DocIDj)){
